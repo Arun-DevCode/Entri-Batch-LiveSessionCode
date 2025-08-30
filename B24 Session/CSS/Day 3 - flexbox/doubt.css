@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  border: 1px solid black;
+}
+
+.box1 {
+  height: 100px;
+  /* width: 100px; */
+  background-color: red;
+  /* flex-grow: 1; */
+  color: white;
+  /* flex-shrink: 1; */
+  flex: 1 0;
+}
+
+.box2 {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}

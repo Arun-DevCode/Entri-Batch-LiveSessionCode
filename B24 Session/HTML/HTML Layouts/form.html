@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <!--Patient Form - Appoinment-->
+    <!--Patient Details : name,age,height,weight, diease,timinig-->
+    <h4>Doctor Appointment</h4>
+    <form action="" method="post">
+      <div>
+        <label for="Patient Name">Patient Name</label>
+        <input type="text" placeholder="Patient Name" required />
+      </div>
+      <div>
+        <label for="age">age</label>
+        <input type="number" placeholder="Enter your age" />
+      </div>
+      <div>
+        <label for="height">height</label>
+        <input type="number" placeholder="Enter your height" />
+      </div>
+      <div>
+        <label for="Weight">Weight</label>
+        <input type="number" placeholder="Enter your weight" />
+      </div>
+      <div>
+        <label for="Diease">Your Diease</label>
+        <textarea name="Diease" id="" placeholder="Enter your medical diease">
+        </textarea>
+      </div>
+      <div>
+        <label for="Time">Time</label>
+        <input type="date" />
+        <input type="time" />
+      </div>
+    </form>
+    <!--Review Form-->
+    <h4>Feedback</h4>
+    <form action="" method="post">
+      <div>
+        <label for="rating">Rating</label>
+        <input type="radio" name="rating" required />
+        <input type="radio" name="rating" required />
+        <input type="radio" name="rating" required />
+        <input type="radio" name="rating" required />
+        <input type="radio" name="rating" required />
+      </div>
+      <div>
+        <label for="Suggestions">Sugesstions</label>
+        <textarea
+          name="Suggestions"
+          id=""
+          placeholder="Share your thoughts"
+        ></textarea>
+      </div>
+    </form>
+
+    <h4>Qualification</h4>
+    <form action="" method="post">
+      <div>
+        <label for="HSC">HSC</label>
+        <input type="checkbox" name="qulification" />
+        <label for="HSC">B.E</label>
+        <input type="checkbox" name="qulification" />
+        <label for="HSC">M.E</label>
+        <input type="checkbox" name="qulification" />
+      </div>
+    </form>
+
+    <!--Input Variation-->
+    <!-- <input type="number" placeholder="Enter your phone" />
+    <input type="email" placeholder="Enter your email" /> -->
+    <!-- <input type="search" placeholder="Enter your email" /> -->
+    <!-- <input type="range" min="0" max="10" /> -->
+    <!-- <input type="checkbox" /> -->
+    <!-- <p>Gender :</p>
+    <input type="radio" value="Female" />
+    <p>Female</p>
+    <input type="radio" value="Male" />
+    <p>Male</p>
+    <input type="radio" value="others" />
+    <p>Others</p>
+    <p>Agree Term & policy</p> -->
+    <!-- <input type="color" /> -->
+    <button>submit</button>
+  </body>
+</html>

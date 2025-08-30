@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  border-bottom: 0.1px solid gray;
+  padding: 16px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100svw;
+  max-width: 80svw;
+  margin: 0 auto;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  column-gap: 48px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+  column-gap: 20px;
+}
+
+.service-list {
+  display: flex;
+  column-gap: 3.5px;
+}
+
+.nav-container button {
+  background: none;
+  border: 1px solid gray;
+  padding-block: 8px;
+  padding-inline: 12px;
+  border-radius: 16px;
+}
+
+.Hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content-container {
+  max-width: 80svw;
+  padding-block: 150px;
+}
+
+.spark-container {
+  border: 1px solid gray;
+  width: 175px;
+  padding-block: 5px;
+  padding-inline: 6px;
+  border-radius: 18px;
+  margin-bottom: 16px;
+}
+
+.intro-container {
+  font-size: 45px;
+  max-width: 520px;
+}
+
+.intro-container span {
+  color: gray;
+}
+
+.intro-container p {
+  font-size: 24px;
+  margin-block: 16px;
+  color: gray;
+}
+.CTA-Container {
+  display: flex;
+  column-gap: 25px;
+  margin-top: 30px;
+}
+.CTA-Container #meet-btn {
+  background-color: white;
+  border: 1px solid gray;
+  padding-inline: 24px;
+  padding-block: 12px;
+  border-radius: 18px;
+  font-weight: medium;
+}
+.CTA-Container #service-btn {
+  background-color: black;
+  color: white;
+  padding-inline: 24px;
+  padding-block: 12px;
+  border-radius: 18px;
+  font-weight: medium;
+}
+
+.image-container img {
+  border-radius: 25px;
+}
+
+/* footer {
+  display: flex;
+  margin-top: 32px;
+  column-gap: 24px;
+} */

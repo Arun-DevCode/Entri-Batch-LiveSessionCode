@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* .inline {
+  color: green;
+}
+.para {
+  color: blue;
+  background-color: aqua;
+}
+p {
+  color: red;
+}
+#entri {
+  color: yellow;
+}
+#title2 {
+  color: chartreuse;
+} */
+
+/*BOX MODEL Properties*/
+/*
+1.Marign
+2.Padding
+3.Outline
+4.Border
+Value : Direction - Clockwise
+*/
+div {
+  display: flex;
+}
+
+p {
+  color: blue;
+  margin-top: 200px;
+  margin-left: 250px;
+  /* margin-right: 30px; */
+  /* margin-bottom: 225px; 200 + 225 + 45 = 470 */
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  border: 2px 2px 0 2px; /*All direction*/
+  border-color: blue;
+  /* border-style: dotted; */
+  outline: 20px;
+  outline-color: blueviolet;
+  outline-style: ridge;
+  /* outline-width: 12px; */
+}

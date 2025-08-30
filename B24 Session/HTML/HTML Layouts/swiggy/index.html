@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiggy-Clone</title>
+  </head>
+  <body>
+    <header>
+      <img src="./assets/images.jpg" alt="swiggy" width="165px" />
+      <nav>
+        <ul>
+          <li>Swiggy Corporate</li>
+          <li>Partner with us</li>
+        </ul>
+        <button>
+          Get the App
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            width="12px"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+            />
+          </svg>
+        </button>
+        <button>Sign in</button>
+      </nav>
+    </header>
+
+    <!--Main Sections-->
+    <main>
+      <!--Hero Section-->
+      <section>
+        <h3>Order food & groceries. Discover best restaurants. Swiggy it!</h3>
+        <!--Search Section-->
+        <div>
+          <!--Delivery Location - Dropdown -->
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              width="16px"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+              />
+            </svg>
+            <select name="Delivery Location" id="">
+              <option
+                disabled
+                selected
+                hidden
+                value="Enter your delivery location"
+              >
+                Enter your delivery location
+              </option>
+              <option value="chennai">Chennai</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="banglore">Bangalore</option>
+              <option value="erode">Erode</option>
+              <option value="salem">Salem</option>
+            </select>
+          </div>
+          <!--Search Restaurant-->
+          <div>
+            <input
+              type="search"
+              placeholder="Search for restaurant, item or more"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              width="16px"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <!--Category Section-->
+        <div>
+          <div>
+            <!--Text Content-->
+            <div>
+              <h4>FOOD DELIVERY</h4>
+              <p>FROM RESTAURANTS</p>
+              <span>UPTO 60% OFF</span>
+            </div>
+            <!--Icon & Image-->
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="15px"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+              <img
+                src="https://img.freepik.com/free-photo/top-view-meat-sauce-soup-with-potatoes-greens-dark-floor_140725-76779.jpg?t=st=1755327986~exp=1755331586~hmac=4a49a62de50eed73633470d19cf54062d0c117f4a419c48285bea191319d1ce0&w=1480"
+                alt="Food"
+                width="120px"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

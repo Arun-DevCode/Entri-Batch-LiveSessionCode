@@ -1,0 +1,30 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  height: 300px;
+  /* flex-flow: wrap-reverse; */
+  justify-content: center;
+  align-items: start;
+  gap: 12px;
+  /* align-content: center; */
+  /* width: 100swv; */
+}
+
+.box1 {
+  background-color: red;
+
+  color: white;
+  /* order: 2; */
+  /* border: 2px solid yellow; */
+}
+.box2 {
+  background-color: blue;
+  color: white;
+  align-self: center;
+}
+.box3 {
+  background-color: green;
+
+  color: white;
+}
