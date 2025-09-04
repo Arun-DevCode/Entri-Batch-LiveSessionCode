@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form | HTML</title>
+  </head>
+  <body>
+    <!--Input Types-->
+    <!-- <input type="text" />
+    <input type="password" />
+    <input type="email" />
+    <input type="number" />
+    <input type="date" />
+    <input type="time" />
+    <input type="datetime" />
+    <input type="datetime-local" />
+    <input type="color" />
+    <input type="file" />
+    <input type="range" min="0" max="100" />
+    <input type="url" />
+    <div>
+      <input type="checkbox" />
+      Agree with term policy
+    </div>
+    <div>
+      <h3>Gender:</h3>
+      <label for="male">Male</label>
+      <input type="radio" name="gender"/>
+      <label for="female">Female</label>
+      <input type="radio" name="gender"/>
+      <label for="others">Others</label>
+      <input type="radio" name="gender"/>
+    </div> -->
+
+    <!--Form Tag - learn -->
+    <form action="#" method="post">
+      <!--Name Field-->
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          value="Naveen Kumar"
+          placeholder="e.g Entri"
+          required
+          readonly
+        />
+      </div>
+      <!--Password Field-->
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="text"
+          placeholder="e.g *****"
+          readonly
+          pattern="{6,}"
+          required
+        />
+      </div>
+      <!--Age Field-->
+      <div>
+        <label for="age">Age</label>
+        <input
+          type="text"
+          placeholder="e.g 34"
+          min="2"
+          max="3"
+          value="10"
+          required
+        />
+      </div>
+      <!--Phone Field-->
+      <div>
+        <label for="phone">Phone</label>
+        <input
+          type="text"
+          placeholder="9876543210"
+          min="6"
+          max="10"
+          autofocus
+          required
+        />
+      </div>
+      <!--Email Field-->
+      <div>
+        <label for="email">E-mail</label>
+        <input type="text" placeholder="e.g john@doe123" required />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

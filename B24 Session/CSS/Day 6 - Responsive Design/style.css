@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
   column-gap: 16px;
   place-content: center;
 }
@@ -26,30 +26,27 @@
   display: grid;
   row-gap: 16px;
   /* padding: 16px; */
-  container-type: inline-size; // Enabled container query
+  container-type: inline-size;
 }
 
-@container (min-width:700px) {
+@container (min-width: 700px) {
   .box-container {
     max-width: 300px;
   }
 }
 
-.box1 {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 16px;
-  padding: 12px;
-}
-.box2 {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 16px;
-  padding: 12px;
-}
+.box1,
+.box2,
 .box3 {
   background-color: white;
   border: 1px solid black;
   border-radius: 16px;
   padding: 12px;
+}
+
+.box1 img,
+.box2 img,
+.box3 img {
+  width: 100%;
+  height: auto;
 }
