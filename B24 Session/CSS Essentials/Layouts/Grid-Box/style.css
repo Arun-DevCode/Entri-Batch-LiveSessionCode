@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 100px);
+  gap: 10px;
+  max-width: 80%;
+}
+
+.box {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+@media (492px<= width <= 576px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 100px);
+  }
+}
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 100px);
+  }
+}

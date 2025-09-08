@@ -1,0 +1,9 @@
+.custom-alert {
+  padding: 16px;
+  border-radius: 4.5px;
+  border: 0.15px solid #cff4fc;
+}
+
+.custom-alert-info {
+  background-color: #cff4fc;
+}
