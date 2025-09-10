@@ -41,7 +41,7 @@ app.post("/register", (req, res) => {
     if (!userData.name || !userData.password) {
       res.json({ message: "Username and password are required!" });
     }
-    storage.push(userData);
+    storage?.push(userData);
     //Success Response to client
     res.json({
       message: "User Registered Success!",
