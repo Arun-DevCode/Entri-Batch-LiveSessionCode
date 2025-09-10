@@ -1,4 +1,8 @@
+import { useSelector } from "react-redux";
+
 function StudentForm() {
+  // Retrieve data from global state/store
+  const { name } = useSelector((state) => state.student);
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
       <form action="#" className="space-y-6">
@@ -45,6 +49,7 @@ function StudentForm() {
               type="text"
               id="studentName"
               name="studentName"
+              value={name}
               placeholder="e.g. Selva Kumar"
               className="w-full px-3 py-2.5 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
               required

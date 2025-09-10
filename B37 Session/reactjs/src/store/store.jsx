@@ -3,7 +3,9 @@ import studentReducer from "../actions/features/student";
 
 //App Store Setup
 const AppStore = configureStore({
-  reducer: studentReducer,
+  reducer: {
+    student: studentReducer,
+  },
 });
 
 export default AppStore;

@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit"; // slice package import
 
 //inital State
 const initialState = {
-  name: null,
+  name: "Entri App",
+  password: "123",
 };
 
 const StudentSlice = createSlice({
@@ -10,7 +11,7 @@ const StudentSlice = createSlice({
   initialState,
   reducers: {
     addStudent: (state, actions) => {
-      state.name = "Entri App";
+      state.name = actions.payload;
     },
   },
 });
