@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 100px));
+  grid-template-rows: repeat(3, minmax(100px, 100px));
+  /* gap: 12px; */
+  /* row-gap: 12px; */
+  /* column-gap: 12px; */
+  /* justify-items: stretch; */
+  /* align-items: stretch; */
+  /* place-items: center; */
+  /* justify-content: center;
+  align-content: center; */
+  /* place-content: center; */
+  /* height: 700px; */
+  /* border: 10px solid green; */
+  /* grid-auto-columns: repeat(3, auto);
+  grid-auto-rows: repeat(3, auto); */
+  /* grid-auto-rows: 100px; */
+  /* grid-auto-columns: 10px; */
+  border: 10px solid black;
+  /* padding: 24px; */
+}
+
+.box-1 {
+  background-color: black;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+  /* grid-column-start: 2; */
+  /* grid-column-end: 1; */
+  /* grid-column: 3/4; */
+  /* grid-column-end: 4; */
+  /* grid-column: 2/4; */
+  /* grid-row-start: 2; */
+  /* justify-self: center;
+  align-self: center; */
+  place-self: center;
+}
+.box-2 {
+  background-color: red;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}
+.box-3 {
+  background-color: green;
+  width: 100px;
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}
+.box-4 {
+  background-color: purple;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}
+.box-5 {
+  background-color: violet;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}
+.box-6 {
+  background-color: gray;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}
+.box-7 {
+  background-color: blue;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}
+.box-8 {
+  background-color: blue;
+  /* width: 100px; */
+  /* height: 100px; */
+  color: white;
+  padding: 5px;
+}

@@ -1,0 +1,1 @@
+Hi everyone, Good morning to all today we have session about git & GitHub along with filesystem.

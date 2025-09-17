@@ -1,6 +1,8 @@
 const express = require("express");
-const router = require("./src/views/routes");
 
+//File Exports
+const router = require("./src/views/routes");
+const connectwithDB = require("./src/config/dbconnect");
 //App Setup
 const app = express();
 
@@ -9,6 +11,9 @@ app.use(express.json()); //body parser
 
 //App Router
 app.use(router);
+
+// Database connection
+connectwithDB();
 
 //PORT NO
 const PORTNO = 4000;
