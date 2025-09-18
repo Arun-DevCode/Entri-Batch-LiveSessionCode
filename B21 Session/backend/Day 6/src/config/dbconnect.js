@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 async function connectwithDB() {
   try {
     await mongoose
-      .connect("mongodb//localhost:27017/Entri-session")
+      .connect("Mongodb Atlas URL")
       .then(() => console.log("Database connected!"))
       .catch((err) => {
         throw new Error("Failed to connect with database!", err);
