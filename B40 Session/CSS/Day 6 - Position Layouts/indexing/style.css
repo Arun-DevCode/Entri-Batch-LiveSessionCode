@@ -1,0 +1,43 @@
+.layer-container {
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  height: 100dvh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.layer-1 {
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding-block: 32px;
+  background-color: green;
+  position: absolute;
+  margin-top: 30px;
+}
+.layer-2 {
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding-block: 32px;
+  background-color: blue;
+  position: absolute;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+.layer-3 {
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding-block: 32px;
+  background-color: red;
+  position: absolute;
+}
