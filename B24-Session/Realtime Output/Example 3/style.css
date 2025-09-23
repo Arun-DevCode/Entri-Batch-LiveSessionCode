@@ -1,0 +1,8 @@
+.hero-container {
+  text-align: center;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100svh;
+}
