@@ -24,6 +24,8 @@ async function authenticate(req, res, next) {
     return res.json({ message: "Unauthorized User!" });
   }
 
+  // Update payload data
+  req.user = isMatch.role;
   // Forwared request
   next();
   try {
