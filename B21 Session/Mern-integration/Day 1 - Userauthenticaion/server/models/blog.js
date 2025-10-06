@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 
 //Step Schema - Blog
 const BlogSchema = mongoose.Schema({
-  Title: {
+  title: {
     type: String,
     require: true,
   },
-  BlogImageURL: {
+  imageurl: {
     type: String,
     require: true,
   },
-  Description: {
+  desc: {
     type: String,
     require: true,
   },

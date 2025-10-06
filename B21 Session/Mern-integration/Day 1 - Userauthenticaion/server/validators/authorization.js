@@ -2,12 +2,11 @@
 const ROLE = ["admin", "users", "Manager"];
 
 // Permission
-// GET , POST , PUT , PATCH , DELETE
-
+// E.G : GET , POST , PUT , PATCH , DELETE
 const permission = {
   ADMIN: ["Create:blog", "View:blog", "Delete:blog"],
-  USERS: ["View:blog"],
-  MANAGER: ["Create:blog", "View:blog"],
+  MANAGER: ["View:blog"],
+  USER: ["Create:blog", "View:blog"],
 };
 
 module.exports = { ROLE, permission };

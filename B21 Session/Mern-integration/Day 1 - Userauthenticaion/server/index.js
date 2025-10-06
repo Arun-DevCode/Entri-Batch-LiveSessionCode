@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 // File Imports
 const DBConnector = require("./config/db");
@@ -9,13 +10,13 @@ const authenticate = require("./middleware/authenticate");
 const authorization = require("./middleware/authorization");
 const UserModel = require("./models/users");
 const BlogModel = require("./models/blog");
-const { permission } = require("./validators/authorization");
 
 //App setup
 const app = express();
 
 //middleware
 app.use(express.json());
+app.use(cors());
 app.use(morgan());
 //App Router
 
@@ -40,7 +41,7 @@ app.post("/register", async (req, res) => {
     //   password: hashPassword,
     // });
 
-    const newUser = await UserModel({
+    const newUser = new UserModel({
       username,
       email,
       password: hashPassword,
@@ -61,6 +62,7 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log(req.body);
 
     // validation
     if (!email || !password) {
@@ -121,33 +123,66 @@ app.get("/list-all-users", authenticate, async (req, res) => {
 app.post(
   "/create-blog",
   authenticate,
-  authorization(permission),
+  authorization("Create:blog"),
   async (req, res) => {
     try {
       const { title, imageurl, desc, userId } = req.body;
 
       // Data validation
       if (!title || !imageurl || !desc || !userId) {
-        return res.status(404).json({ message: "All fields are required!" });
-      }
-
-      // Check user exists
-      const newblog = await BlogModel(req.body);
-      const isSaved = await newblog.save();
-
-      if (!isSaved) {
-        throw new Error("Failed to create a blog & store.");
-      }
-      // Send message to client
-      res
-        .status(201)
-        .json({
-          Success: true,
-          message: "Blog Created Success!",
-          blog: newblog,
+        return res.status(400).json({
+          success: false,
+          message: "All fields are required!",
         });
+      }
+
+      // Check if user exists
+      const isExistUser = await UserModel.findOne({ _id: userId });
+
+      if (!isExistUser) {
+        return res.status(404).json({
+          success: false,
+          message: "User not found!",
+        });
+      }
+
+      // Create new blog
+      const newblog = new BlogModel({
+        title,
+        imageurl,
+        desc,
+        userId,
+      });
+
+      await newblog.save();
+
+      // Send response to client
+      res.status(201).json({
+        success: true,
+        message: "Blog created successfully!",
+        blog: newblog,
+      });
     } catch (error) {
-      return res.json({ success: false, message: error.message });
+      // Handle mongoose validation errors
+      if (error.name === "ValidationError") {
+        return res.status(400).json({
+          success: false,
+          message: error.message,
+        });
+      }
+
+      // Handle invalid ObjectId
+      if (error.name === "CastError") {
+        return res.status(400).json({
+          success: false,
+          message: "Invalid user ID format",
+        });
+      }
+
+      return res.status(500).json({
+        success: false,
+        message: error.message,
+      });
     }
   }
 );
