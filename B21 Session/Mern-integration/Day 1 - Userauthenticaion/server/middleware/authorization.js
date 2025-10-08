@@ -4,9 +4,10 @@ const { permission } = require("../validators/authorization");
 function authorization(requiredPermission) {
   return function (req, res, next) {
     try {
-      // Get user role from request (set by authenticate middleware)
-      const userRole = req.user?.toUpperCase();
-      console.log("User Role:",userRole);
+      // Get user role & Id from request (set by authenticate middleware)
+      const userRole = req.user?.role?.toUpperCase();
+      console.log("User Role:", userRole);
+      console.log("Authenticate User : ", req.user.userId);
 
       if (!userRole) {
         return res.status(401).json({
@@ -33,7 +34,8 @@ function authorization(requiredPermission) {
           message: `Insufficient permissions. Please contact admin`,
         });
       }
-
+      // Pass userId to request
+      req.user = req.user?.userId;
       next(); // Forwared Request
     } catch (error) {
       return res.status(500).json({

@@ -1,10 +1,11 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log(email, password);
+  const navigate = useNavigate();
+
   //! What we fixed here - add header config in request
   async function handleUserRegister(event) {
     event.preventDefault();
@@ -18,6 +19,11 @@ function LoginPage() {
       });
       const data = await response.json();
       console.log(data);
+      // Store secret key in browser storage-Local Storage
+      localStorage.setItem("accessToken", data.accessToken); // getItem,
+
+      //Redirect to blog page
+      navigate("/blog");
     } catch (error) {
       alert("Failed to Login User!");
     }

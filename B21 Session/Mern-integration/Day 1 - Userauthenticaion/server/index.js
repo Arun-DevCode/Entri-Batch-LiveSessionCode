@@ -79,7 +79,7 @@ app.post("/login", async (req, res) => {
 
     // Generate secret key
     const payload = {
-      username: isExistUser.username,
+      userId: isExistUser._id,
       email: isExistUser.email,
       role: isExistUser.role,
     };
@@ -97,7 +97,7 @@ app.post("/login", async (req, res) => {
 });
 
 //Step 3 : List all user with authentication
-app.get("/list-all-users", authenticate, async (req, res) => {
+app.get("/list-all-users", async (req, res) => {
   console.log(req.user);
   try {
     const UsersList = await UserModel.find();
@@ -126,7 +126,9 @@ app.post(
   authorization("Create:blog"),
   async (req, res) => {
     try {
-      const { title, imageurl, desc, userId } = req.body;
+      const { title, imageurl, desc } = req.body;
+      const userId = req.user;
+      console.log("UserID:", userId);
 
       // Data validation
       if (!title || !imageurl || !desc || !userId) {
@@ -187,7 +189,34 @@ app.post(
   }
 );
 
-// Step 4 : Delete a user by ID
+// Step 5 : GET all blogs
+app.get("/get-all-blogs", authenticate, async (req, res) => {
+  try {
+    const blogs = await BlogModel.find();
+    res.status(200).json(blogs);
+  } catch (error) {
+    console.error("Error fetching blogs:", error.message);
+    res.status(500).json({ message: "Server error while fetching blogs" });
+  }
+});
+
+// Step 4 : DELETE a blog by ID
+app.delete("/blogs/:id", async (req, res) => {
+  try {
+    const blogId = req.params.id;
+
+    const deletedBlog = await BlogModel.findByIdAndDelete(blogId);
+
+    if (!deletedBlog) {
+      return res.status(404).json({ message: "Blog not found" });
+    }
+
+    res.status(200).json({ message: "Blog deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting blog:", error.message);
+    res.status(500).json({ message: "Server error while deleting blog" });
+  }
+});
 
 // Database Connection
 DBConnector();

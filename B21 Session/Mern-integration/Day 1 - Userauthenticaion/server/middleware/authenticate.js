@@ -25,7 +25,7 @@ async function authenticate(req, res, next) {
   }
 
   // Update payload data
-  req.user = isMatch.role;
+  req.user = { role: isMatch.role, userId: isMatch._id };
   // Forwared request
   next();
   try {
