@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revision | Bootstrap</title>
+    <!--Bootstrap CDN Link-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!--Fontawesome CDN Link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--External CSS File-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!--Google Fonts CDN-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header style="background-color: white">
+      <!--Contact Notification-->
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+        style="background-color: #233645"
+      >
+        <div class="p-2 text-white">
+          <span style="border-right: 2px solid white; padding-right: 6px">
+            <i class="fa-regular fa-envelope"></i>
+            Noreply@gmail.com</span
+          >
+          <span><i class="fa-solid fa-phone"></i>+44-75468752456</span>
+        </div>
+        <!--Social Connection-->
+        <div class="text-white">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-google"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+      <!--Navbar menu list-->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Moving Medicine</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Resources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Shop</a>
+              </li>
+            </ul>
+          </div>
+          <!--User Actions-->
+          <button
+            class="btn rounded-lg text-white"
+            style="background-color: #1cc2e9"
+          >
+            Appointment
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!--Hero Section-->
+      <section
+        class="Hero-banner d-flex justify-content-center align-items-center"
+      >
+        <div class="content-container">
+          <h1 class="text-white text-center mb-2">
+            Healthy Tablets and Medicine
+          </h1>
+          <div class="search-bar">
+            <!--Category Dropdown-->
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                All Category
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+            <input
+              type="text"
+              placeholder="Search for tables,medicine..."
+              name="Search-data"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              width="25"
+              style="color: grey"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </div>
+          <div class="actions-container my-4">
+            <button
+              class="btn p-2"
+              style="background-color: black; color: white"
+            >
+              Check More
+            </button>
+            <button
+              class="btn p-2"
+              style="background-color: white; color: black"
+            >
+              Find medicine
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--Bootstrap CDN Link-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.Hero-banner {
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/042/585/516/small_2x/ai-generated-medical-stethoscope-on-green-background-top-view-with-copy-space-photo.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 700px;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+.actions-container {
+  self-align: center;
+  margin-inline: auto;
+}
+.search-bar {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  padding: 8px;
+  border-radius: 16px;
+  width: 700px;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding-inline: 12px;
+  padding-block: 12px;
+  border: none;
+}
