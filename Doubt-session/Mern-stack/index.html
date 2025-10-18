@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Registeration | JS</title>
+    <!--External Style Sheet-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Form Container-->
+    <section>
+      <!--Personal Details - Form-->
+      <!-- <div class="personal-formContainer">
+        <h1>No Personal data yet filled.</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro sunt
+          inventore quia minima, voluptatibus cupiditate, quaerat sit hic eos
+          debitis facere nihil est, reiciendis provident dolorum distinctio
+          tempora ab accusantium.
+        </p>
+      </div> -->
+      <!--Agent Details - Form-->
+      <div class="agent-formContainer">
+        <h2>Profile Information</h2>
+        <!--Agent Registeration Form-->
+        <form>
+          <!--Name-->
+          <div class="form-field">
+            <label>Agency Name</label>
+            <input type="text" name="agentName" required />
+          </div>
+          <!--Type-->
+          <div class="form-field">
+            <select name="" id="" required>
+              <option value="">Coroperate1</option>
+              <option value="">Coroperate2</option>
+              <option value="">Coroperate3</option>
+            </select>
+          </div>
+          <!--Password-->
+          <div class="form-field">
+            <label for="password">Password</label>
+            <input type="password" required />
+          </div>
+          <!--Address-->
+          <div class="form-field">
+            <label>Addres</label>
+            <input type="text" required />
+          </div>
+          <!--City & State-->
+          <div style="display: flex; column-gap: 10px">
+            <div class="city" style="display: flex; flex-direction: column">
+              <label for="city">City</label>
+              <input type="text" required style="width: 110px" />
+            </div>
+            <div class="state" style="display: flex; flex-direction: column">
+              <label for="state">State</label>
+              <input type="text" required style="width: 110px" />
+            </div>
+          </div>
+          <!--Tell No-->
+          <div class="form-field">
+            <label>Telephone Number</label>
+            <input type="tel" required />
+          </div>
+          <!--Toll No-->
+          <div class="form-field">
+            <label>Toll Number</label>
+            <input type="number" required />
+          </div>
+          <!--Email ID-->
+          <div class="form-field">
+            <label>Email ID</label>
+            <input type="email" required />
+          </div>
+          <!--Website-->
+          <div class="form-field">
+            <label>Website</label>
+            <input type="text" required />
+          </div>
+          <!--Company Name-->
+          <div class="form-field">
+            <label>Company Name</label>
+            <input type="text" required />
+          </div>
+          <!--Office Space-->
+          <div class="form-field" style="display: flex; flex-direction: column">
+            <div
+              class="office-space"
+              style="display: flex; flex-direction: row"
+            >
+              <label for="office-space">Office Space</label>
+              <div>
+                <input
+                  type="radio"
+                  name="officeSpace"
+                  id="owned-radio"
+                  value="office-space"
+                  required
+                />
+                <label for="office-space">Office</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="officeSpace"
+                  id="rental"
+                  required
+                  value="rental"
+                />
+                <label for="Rental-space">rental</label>
+              </div>
+            </div>
+          </div>
+          <!--Company Logo-->
+          <div class="form-field">
+            <label for="company-logo">Company Logo</label>
+            <input type="file" accept=".png,.jpg,.jpeg" required />
+          </div>
+          <!--Waring Message-->
+          <p>
+            In order to process your registeration, we ask you to proivde the
+            following information. Please note that at fields marked with an
+            asterik(*) are required.
+          </p>
+          <button type="submit">Create an account</button>
+        </form>
+      </div>
+      <!--Contact Person Details - Form-->
+      <!-- <div class="contact-formContainer">
+        <h1>No Contact Persona data yet filled.</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro sunt
+          inventore quia minima, voluptatibus cupiditate, quaerat sit hic eos
+          debitis facere nihil est, reiciendis provident dolorum distinctio
+          tempora ab accusantium.
+        </p>
+      </div> -->
+      <!--Work Order Space - Form-->
+      <!-- <div class="work_orderSpaceForm">
+        <h1>No work space order created yet!.</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro sunt
+          inventore quia minima, voluptatibus cupiditate, quaerat sit hic eos
+          debitis facere nihil est, reiciendis provident dolorum distinctio
+          tempora ab accusantium.
+        </p>
+      </div> -->
+    </section>
+
+    <!--External Script File-->
+    <script src="script.js"></script>
+  </body>
+</html>

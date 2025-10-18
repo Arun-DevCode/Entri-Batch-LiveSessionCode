@@ -1,0 +1,46 @@
+body {
+  background-color: #e2ebf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+/*Agent Form Container*/
+section {
+  background-color: white;
+  padding: 12px;
+  border-radius: 32px;
+}
+
+.agent-formContainer {
+  padding: 8px;
+}
+/*Registeration Form*/
+form {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  gap: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    grid-template-columns: 250px;
+    gap: 12px;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-block: 12px;
+}
+
+input {
+  /* padding-inline: 16px; */
+  padding-block: 12px;
+  border: 5px solid #f2f2f2;
+}
