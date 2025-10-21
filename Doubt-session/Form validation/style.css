@@ -1,0 +1,16 @@
+li {
+  display: flex;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid black;
+}
