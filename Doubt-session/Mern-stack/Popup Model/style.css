@@ -19,6 +19,6 @@ body {
   border: 1px solid black;
   padding: 8px;
   background-color: white;
-  /* display: none; */
-  visibility: hidden;
+  display: none; // block
+  /* visibility: hidden; */
 }
