@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Model | Feedback</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <h1>Changed</h1> -->
+    <!--Dialog Model-->
+    <div class="dialog_model">
+      <button class="feedback_btn">Review</button>
+      <div id="feedback_formContainer">
+        <form action="#">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h2>Feedback</h2>
+            <svg
+              id="close_btn"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              width="20"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <div>
+            <textarea
+              name="feedback"
+              id="feedback"
+              placeholder="Share your feedback"
+            >
+            </textarea>
+          </div>
+          <button>Submit review</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
