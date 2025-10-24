@@ -5,11 +5,13 @@ import { RouterProvider } from "react-router";
 import AppRouter from "./routes/routes.jsx";
 import { Provider } from "react-redux";
 import AppStore from "./store/store.jsx";
+import ThemePage from "./themePage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider store={AppStore}>
+    <ThemePage />
+    {/* <Provider store={AppStore}>
       <RouterProvider router={AppRouter} />
-    </Provider>
+    </Provider> */}
   </StrictMode>
 );
