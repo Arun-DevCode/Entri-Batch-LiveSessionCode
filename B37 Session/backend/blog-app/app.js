@@ -1,11 +1,25 @@
 import express from "express";
-// import morgan from "morgan";
+import morgan from "morgan";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+// File Imports
+import CommentModel from "./src/models/comments.js";
 
 const app = express();
 
+// Env config
+dotenv.config();
+
 // DB Connection
-const connection = mongoose.connect("mongodb://localhost:27017/BlogsDB");
+const dbName = process.env.MONGODB_DATABASE_NAME;
+const dbUsername = process.env.MONGODB_USERNAME;
+const dbPassword = process.env.MONGODB_PASSWORD;
+const dbCluster = process.env.MONGODB_CLUSTER_NAME;
+
+const connection = mongoose.connect(
+  `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.ynk007h.mongodb.net/${dbName}?appName=${dbCluster}`
+);
 if (connection) {
   console.log("DB Connection Estabilished!");
 } else {
@@ -13,7 +27,14 @@ if (connection) {
 }
 
 //middleware
-// app.use(morgan());
+// app.use(morgan);
+
+app.get("/get-all-comments", async (req, res) => {
+  const comments = await CommentModel.find();
+  console.log(comments);
+  res.json(comments).status(200);
+});
+
 app.listen(3000, () => {
   console.log("Server running..");
 });

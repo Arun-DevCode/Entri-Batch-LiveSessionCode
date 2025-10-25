@@ -1,0 +1,74 @@
+/*---- CSS Selectors -----*/
+
+/*
+ A. Beginner Selectors
+*/
+
+/* * {
+  color: red;
+  font-size: 40px;
+} */
+
+/* h1 {
+  color: red;
+  font-size: 40px;
+}
+
+p {
+  color: blue;
+  font-size: 40px;
+}
+
+h3 {
+  color: orange;
+  font-size: 40px;
+} */
+
+/* .text-primary {
+  color: orange;
+  font-size: 40px;
+} */
+
+/* #entri {
+  color: blue;
+} */
+
+/* h1,h2,h3,h4 {
+  color: purple;
+} */
+
+/* div p {
+  color: red;
+} */
+
+/*--- Intermediate Selectors----- */
+
+/* div>h1{
+  color: blue;
+} */
+
+/* h2+h3 {
+  color: green;
+} */
+
+/* input[type] {
+  border: 1px solid gray;
+} */
+
+/* input[type] {
+  color: red;
+} */
+/* input[type="email"] {
+  color: red;
+} */
+
+/*Dark mode*/
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light {
+  background-color: white;
+}

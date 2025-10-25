@@ -48,10 +48,10 @@ const person = {
 //    console.log(number);
 //  }
 
-//  let OnePerson;
-//  for(OnePerson in person){
-//   console.log(person[OnePerson]);
-//  }
+ let OnePerson;
+ for(OnePerson in person){
+  console.log(person[OnePerson]);
+ }
 
 // for(number of numbers){
 //   console.log(number);
