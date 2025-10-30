@@ -62,13 +62,71 @@ h3 {
   color: red;
 } */
 
-/*Dark mode*/
+/* #container>h1+p {
+  color: blue;
+} */
 
-.dark {
+/* h4 ~ span {
+  color: red;
+} */
+
+/* input[type="url"] {
+  color: orange;
+} */
+/* input[type="url"] {
+  color: orange;
+} */
+
+/* a[href^="https"] {
+  color: orange;
+} */
+/* a[href$="/"] {
+  color: green;
+} */
+
+/* a[href*="@"] {
+  color: red;
+} */
+
+/* Pseudo Class - Selector*/
+button {
   background-color: black;
   color: white;
 }
+button:hover {
+  background-color: blue;
+}
+/* a:link {
+  color: blue;
+}
 
-.light {
-  background-color: white;
+a:visited {
+  color: purple;
+}
+
+a:active {
+  color: red;
+} */
+
+/* ul > li {
+  color: red;
+} */
+
+/* li:first-child {
+  color: red;
+}
+li:last-child {
+  color: red;
+}
+
+li:nth-child(3) {
+  color: blue;
+} */
+
+/* ul:not() {
+  color: red;
+} */
+
+p:not(.title){
+  color: blue;
 }

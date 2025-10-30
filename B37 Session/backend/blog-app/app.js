@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 // File Imports
-import CommentModel from "./src/models/comments.js";
+import Products from "./src/models/products.js";
 
 const app = express();
 
@@ -17,9 +17,7 @@ const dbUsername = process.env.MONGODB_USERNAME;
 const dbPassword = process.env.MONGODB_PASSWORD;
 const dbCluster = process.env.MONGODB_CLUSTER_NAME;
 
-const connection = mongoose.connect(
-  `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.ynk007h.mongodb.net/${dbName}?appName=${dbCluster}`
-);
+const connection = mongoose.connect(`mongodb://localhost:27017/vision?`);
 if (connection) {
   console.log("DB Connection Estabilished!");
 } else {
@@ -29,10 +27,9 @@ if (connection) {
 //middleware
 // app.use(morgan);
 
-app.get("/get-all-comments", async (req, res) => {
-  const comments = await CommentModel.find();
-  console.log(comments);
-  res.json(comments).status(200);
+app.get("/get-all-products", async (req, res) => {
+  const result = await Products.find({ price: { $gt: 100 } }).limit(3);
+  res.json(result).status(200);
 });
 
 app.listen(3000, () => {
