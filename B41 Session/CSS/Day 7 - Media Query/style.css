@@ -1,0 +1,69 @@
+/* div {
+  padding: 12px;
+}
+
+h1 {
+  color: purple;
+}
+
+div p {
+  text-align: justify;
+  margin-top: 12px;
+}
+
+@media print and (orientation: landscape) {
+  div {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+  }
+  h1 {
+    color: orange;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+@media print and (orientation: portrait) {
+  div {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+  }
+  h1 {
+    color: orange;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+} */
+
+/*Container Query*/
+/* Step 1: Enable container query */
+.card-container {
+  /* container-type: inline-size;
+  container-name: card; */
+  container: card / inline-size;
+  width: 400px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.card {
+  background: lightblue;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+@container card (min-width: 500px) {
+  .card {
+    background: lightgreen;
+    font-size: 1.2rem;
+  }
+}

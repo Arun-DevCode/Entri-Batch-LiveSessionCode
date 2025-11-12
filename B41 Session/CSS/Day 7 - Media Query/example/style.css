@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background-color: black;
+  color: white;
+  container: card/inline-size;
+  width: 319px;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 300px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .container {
+    width: 420px;
+  }
+}
+
+@container card (max-width: 320px) {
+  .container img {
+    max-width: 100%;
+    padding: 15px;
+    /* background-color: red; */
+  }
+  .content {
+    padding: 15px;
+  }
+  .content h1 {
+    font-size: 28px;
+  }
+  .container p {
+    margin-block: 12px;
+  }
+}

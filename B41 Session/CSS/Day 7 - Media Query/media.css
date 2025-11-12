@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+}
+
+.media-container img {
+  border-radius: 12px;
+}
+.media-container p {
+  margin-block: 12px;
+  text-align: justify;
+}
+
+/*Mobile Screen*/
+@media screen and (max-width: 576px) {
+  .media-container {
+    max-width: 320px;
+  }
+}
+/* Tablet Screen*/
+@media (min-width: 576px) and (max-width: 768px) {
+  .media-container {
+    max-width: 520px;
+    display: flex;
+  }
+}

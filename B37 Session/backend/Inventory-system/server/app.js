@@ -1,5 +1,6 @@
 import Express from "express";
 import { config } from "dotenv";
+import cors from "cors";
 
 // File Imports
 import DBCONNECTION from "./src/config/db.config.js";
@@ -10,6 +11,7 @@ const app = Express();
 
 // Env
 config();
+app.use(cors());
 
 // middleware
 app.use(Express.json());

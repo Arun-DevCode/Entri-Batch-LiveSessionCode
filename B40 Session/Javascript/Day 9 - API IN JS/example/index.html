@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Speech API Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .box {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .btn-start {
+        background: #4caf50;
+        color: white;
+      }
+      .btn-stop {
+        background: #f44336;
+        color: white;
+      }
+      .btn-speak {
+        background: #2196f3;
+        color: white;
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      #output {
+        min-height: 60px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Speech Recognition -->
+    <div class="box">
+      <h2>🎙️ Speech to Text</h2>
+      <button class="btn-start" onclick="startRecognition()">Start</button>
+      <button class="btn-stop" onclick="stopRecognition()">Stop</button>
+      <div id="output">Click Start and speak...</div>
+    </div>
+
+    <!-- Speech Synthesis -->
+    <div class="box">
+      <h2>🔊 Text to Speech</h2>
+      <textarea id="text" rows="3">
+Hello! This is text to speech demo.</textarea
+      >
+      <button class="btn-speak" onclick="speak()">Speak</button>
+    </div>
+
+    <script>
+      // Speech Recognition
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      let transcript = "";
+
+      recognition.onresult = (e) => {
+        let interim = "";
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          if (e.results[i].isFinal) {
+            transcript += e.results[i][0].transcript + " ";
+          } else {
+            interim += e.results[i][0].transcript;
+          }
+        }
+        document.getElementById("output").innerHTML =
+          transcript + '<i style="color:#999">' + interim + "</i>";
+      };
+
+      function startRecognition() {
+        recognition.start();
+      }
+
+      function stopRecognition() {
+        recognition.stop();
+      }
+
+      // Speech Synthesis
+      function speak() {
+        const text = document.getElementById("text").value;
+        const utterance = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(utterance);
+      }
+    </script>
+  </body>
+</html>
