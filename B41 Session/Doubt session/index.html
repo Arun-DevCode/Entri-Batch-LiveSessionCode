@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--External CSS File-->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      header {
+        background-color: black;
+        padding: 16px;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        column-gap: 15px;
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        column-gap: 15px;
+      }
+      ul li {
+        font-size: 18px;
+      }
+
+      button {
+        background-color: white;
+        border: none;
+        padding-inline: 16px;
+        padding-block: 8.5px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 4.5px;
+        cursor: pointer;
+      }
+
+      /*Mobile Query*/
+      @media screen and (max-width: 562px) {
+        ul {
+          visibility: hidden;
+        }
+      }
+
+      @media screen and (min-width: 642px) {
+        nav {
+          max-width: 80%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>B41</h1>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Support</li>
+        </ul>
+        <div>
+          <!--Search Icon-->
+          <button>Enroll Now</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- <div class="container">
+      <h1>Responsive Design - CSS</h1>
+      <div class="grid-container">
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+        <div class="box-1"></div>
+      </div>
+    </div> -->
+  </body>
+</html>

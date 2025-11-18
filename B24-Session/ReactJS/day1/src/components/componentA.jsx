@@ -1,47 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import ComponentB from "../components/componentB";
 
-function Products() {
-  const [products, setProducts] = useState([]);
-  const [update, setUpdate] = useState(false);
-
-  const getAllProducts = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        if (!data) {
-          console.log("failed to fetch data");
-        }
-        setProducts(data);
-      });
-  };
-
-  useEffect(() => {
-    getAllProducts();
-  },[update]);
-
-  console.log(update);
-
+function componentA(props) {
   return (
-    <section className="p-6">
-      <div className="flex flex-col space-y-2.5 justify-between items-center mb-6">
-        <button
-          onClick={getAllProducts}
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Get Products
-        </button>
-        <button
-          onClick={() => setUpdate(!update)}
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Trigger
-        </button>
-      </div>
-
+    <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {products?.map((product) => {
+        {props.data?.map((product) => {
           return (
             <div
               className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
@@ -84,8 +48,8 @@ function Products() {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 }
 
-export default Products;
+export default componentA;
