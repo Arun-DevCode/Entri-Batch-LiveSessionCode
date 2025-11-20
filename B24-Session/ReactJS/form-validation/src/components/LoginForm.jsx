@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router";
 import { useState } from "react";
 
 function LoginForm() {
-  // const [pending, setPending] = useState(false);
-
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -11,14 +11,12 @@ function LoginForm() {
     formState: { errors },
   } = useForm();
 
-  // live tracking
-  const wordTracking = watch("feedback", 0);
-  console.log(wordTracking);
+  // Live tracking
+  const passWordStrength = watch("password", "");
+  const feedbackText = watch("feedback", "");
 
   const onSubmit = (data) => {
-    setPending(true);
-
-    setPending(false);
+    console.log(data);
   };
 
   return (
@@ -38,16 +36,9 @@ function LoginForm() {
         <div className="mb-4">
           <label className="block text-gray-600 mb-1">Email</label>
           <input
-            name="email"
             type="text"
             {...register("email", {
               required: "Email is required!",
-              // pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              // validate: (value) => {
-              //   if (!value.includes("@")) {
-              //     return "Invalid Email address";
-              //   }
-              // },
             })}
             placeholder="johndoe@gmail.com"
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -60,62 +51,102 @@ function LoginForm() {
         {/* Password */}
         <div className="mb-4">
           <label className="block text-gray-600 mb-1">Password</label>
-          <input
-            name="password"
-            type="password"
-            placeholder="••••••••"
-            {...register("password", {
-              required: {
-                value: true,
-                message: "Email is required!",
-              },
-              min: {
-                value: 8,
-                message: "Password must be 8 characters",
-              },
-              max: {
-                value: 10,
-                message: "Password must be above 8+ characters",
-              },
-              pattern: {
-                test: /[a-zA-Z0-9]/,
-                message: "Password must contains 8 characters",
-              },
-            })}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="flex space-x-3.5 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="••••••••"
+              {...register("password", {
+                required: "Password is required!",
+                minLength: {
+                  value: 8,
+                  message: "Password must have at least 8 characters",
+                },
+              })}
+              className="focus:outline-none"
+            />
+            <span>
+              {!showPassword ? (
+                <button onClick={() => setShowPassword(!showPassword)}>
+                  Show
+                </button>
+              ) : (
+                <button onClick={() => setShowPassword(!showPassword)}>
+                  Hide
+                </button>
+              )}
+            </span>
+          </div>
+          {/* Show Strength Password */}
+          <div className="inline-flex space-x-2.5">
+            {passWordStrength.length > 0 && (
+              <input
+                type="range"
+                name="Strength"
+                value={passWordStrength.length}
+                readOnly
+              />
+            )}
+            {passWordStrength.length > 0 ? (
+              passWordStrength.length === 3 ? (
+                <span>Poor</span>
+              ) : passWordStrength.length === 6 ? (
+                <span>Average</span>
+              ) : passWordStrength.length === 10 ? (
+                <span>Strong</span>
+              ) : null
+            ) : null}
+          </div>
+
           {errors.password && (
             <p className="text-red-500 text-sm">{errors.password.message}</p>
           )}
         </div>
 
-        {/* Content */}
-        <textarea
-          name="feedback"
-          id="user-feedback"
-          className="w-full p-2.5 border border-gray-300"
-          placeholder="Write your feedback"
-          {...register("feedback", {
-            required: "feedback is required!",
-            minLength: 10,
-            max: {
-              value: 250,
-              message: "Feedback should contains only 250 characters!",
-            },
-          })}
-        ></textarea>
+        {/* Feedback */}
+        <div className="mb-2.5">
+          <label className="block text-gray-600 mb-1">Feedback</label>
+          <div className="relative">
+            <textarea
+              className="w-full p-2.5 border border-gray-300 rounded"
+              placeholder="Write your feedback"
+              maxLength={255}
+              {...register("feedback", {
+                required: "Feedback is required!",
+                minLength: {
+                  value: 10,
+                  message: "Feedback must contain at least 10 characters",
+                },
+                maxLength: {
+                  value: 250,
+                  message: "Feedback can contain only 250 characters",
+                },
+              })}
+            ></textarea>
 
-        {errors.feedback && (
-          <p className="text-red-500 text-sm mb-2.5">
-            {errors.feedback.message}
-          </p>
-        )}
+            {/* Character Counter */}
+            <p className="text-gray-500 absolute right-2.5 bottom-2.5 text-right text-sm">
+              {feedbackText.length} / 250
+            </p>
+          </div>
+          {errors.feedback && (
+            <p className="text-red-500 text-sm">{errors.feedback.message}</p>
+          )}
+        </div>
+
+        {/* Submit */}
         <button
           type="submit"
-          className="w-full disabled:cursor-not-allowed bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
         >
           Submit
         </button>
+
+        <Link to="/" className="mt-2.5 block text-center text-sm">
+          Don't have an account?{" "}
+          <span className="text-blue-600 underline font-medium">
+            Click Here
+          </span>
+        </Link>
       </form>
     </div>
   );

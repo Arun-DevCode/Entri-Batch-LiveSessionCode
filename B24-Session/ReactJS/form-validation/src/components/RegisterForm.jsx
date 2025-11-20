@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router";
 
 function LoginForm() {
   const {
@@ -7,8 +8,14 @@ function LoginForm() {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     console.log(data);
+    if (!data) {
+      alert("Kindly fill all required field!");
+    }
+    navigate("/products");
   };
   return (
     <div className="h-screen flex items-center justify-center bg-gray-100">
@@ -17,7 +24,7 @@ function LoginForm() {
         className="bg-white w-80 p-6 rounded-xl shadow-md"
       >
         <div className="mb-5">
-          <h2 className="text-2xl font-semibold text-center">Login</h2>
+          <h2 className="text-2xl font-semibold text-center">Register</h2>
           <p className="text-md text-center text-gray-500">
             Sign in to your account.
           </p>
@@ -61,6 +68,12 @@ function LoginForm() {
         >
           Submit
         </button>
+        <Link to="/login" className="mt-2.5">
+          Already have an a account?
+          <span className="text-blue-600 underline cursor-pointer font-medium text-sm">
+            Click Here
+          </span>
+        </Link>
       </form>
     </div>
   );
