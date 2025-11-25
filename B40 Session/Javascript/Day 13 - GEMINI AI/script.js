@@ -16,7 +16,7 @@ async function sendMessage() {
     {
       method: "POST",
       headers: {
-        "x-goog-api-key": "AIzaSyCosCWIO5Cqd9i_72WCVh7JSRVjHPzFK9Q",
+        "x-goog-api-key": "",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
