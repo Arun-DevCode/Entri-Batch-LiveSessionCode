@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer components {
+  .active-btn {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 text-center font-medium rounded-md cursor-pointer w-full;
+  }
+}
