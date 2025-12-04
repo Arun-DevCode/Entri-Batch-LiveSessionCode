@@ -70,3 +70,30 @@ console.log(numbers);
 // ];
 
 // console.log(mixedupValue);
+
+
+// Array - Collection data / Object
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+// console.log(numbers);
+
+// const mixedupValue = [
+//   1,
+//   2,
+//   3,
+//   "Username",
+//   "A",
+//   true,
+//   false,
+//   undefined,
+//   null,
+//   {
+//     name: "Andro",
+//     courseName: "AI+FSD",
+//     batchCode: "FSD| MERN | AN B41",
+//   },
+//   [20,10]
+// ];
+
+// console.log(mixedupValue);
+
+

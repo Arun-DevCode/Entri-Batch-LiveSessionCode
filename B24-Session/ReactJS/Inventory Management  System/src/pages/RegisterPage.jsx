@@ -31,6 +31,7 @@ export default function RegisterPage() {
     // Validation
     if (!response) {
       toast("No response found!");
+      return;
     }
 
     // Local Storage - User

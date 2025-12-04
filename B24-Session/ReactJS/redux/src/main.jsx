@@ -8,13 +8,14 @@ import { Provider } from "react-redux";
 import AppStore from "./store/AppStore.jsx";
 import Register from "./components/register.jsx";
 import Display from "./components/Display.jsx";
+import Counter from "./components/counter.jsx";
+import { RouterProvider } from "react-router";
+import AppRotuer from "./router/AppRotuer.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={AppStore}>
-      <Display />
-      <App />
-      <Register />
+      <RouterProvider router={AppRotuer} />
     </Provider>
   </StrictMode>
 );

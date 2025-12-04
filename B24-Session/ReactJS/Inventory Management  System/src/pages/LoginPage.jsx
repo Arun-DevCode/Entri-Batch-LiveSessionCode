@@ -23,7 +23,7 @@ export default function LoginPage() {
     // After valid
     setTimeout(() => {
       navigate("/dashboard/inventory");
-    }, 3000);
+    }, 3000); // 3s 
   };
 
   const handleKeyPress = (e) => {
