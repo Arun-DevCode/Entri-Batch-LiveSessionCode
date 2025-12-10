@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+/* :root{
+    --paragraph-color:
+} */
+
+@theme {
+  --color-paragraph: #455597;
+  --color-background: #42e2b8;
+  --color-title: #07004d;
+}
+
+@layer components {
+  /*Card Design*/
+  .card {
+    @apply max-w-sm mx-auto rounded-xl bg-white shadow overflow-hidden;
+  }
+
+  .card-title {
+    @apply p-4 text-4xl text-black font-serif font-medium my-0;
+  }
+}
+
+@layer utility {
+  .text-blue-1000 {
+    color: #f3dfbf;
+  }
+  .Entri {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .font-10xl {
+    font-size: 320px;
+  }
+}
+
+@layer base {
+  h4 {
+    color: red;
+    font-size: 24px;
+  }
+}
+
+body {
+  background-color: black;
+}
