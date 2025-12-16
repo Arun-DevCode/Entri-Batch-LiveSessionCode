@@ -1,3 +1,4 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 import RegisterForm from "./components/RegisterForm";
 import LoginForm from "./components/LoginForm";
@@ -6,5 +7,7 @@ const isUserRegistered = "Guest-User";
 import Products from "./components/Products";
 import Form from "./components/Form";
 import Profile from "./components/Profile";
+import Adding from "./components/Adding";
+import Post from "./components/Post";
 
-createRoot(document.getElementById("root")).render(<Profile />);
+createRoot(document.getElementById("root")).render(<Post />);

@@ -47,38 +47,41 @@ function Products() {
 
   console.table(users);
   return (
-    <div id="product-list">
-      {/* Users Data */}
-      {users.map((user, index) => {
-        return (
-          <div className="shadow bg-gray-100" key={index}>
-            <h3>{user.name}</h3>
-            <p>{user.role}</p>
-            <ul>
-              {user.experience.map((details, DetailsInndex) => (
-                <div key={DetailsInndex}>
-                  <li>{details.organizationName}</li>
-                  <li>{details.period}</li>
-                </div>
-              ))}
-            </ul>
-            <div>
-              <h2>SkillS : </h2>
+    <div>
+      <h1>Product Details:</h1>
+      <div id="product-list">
+        {/* Users Data */}
+        {users.map((user, index) => {
+          return (
+            <div className="shadow bg-gray-100" key={index}>
+              <h3>{user.name}</h3>
+              <p>{user.role}</p>
               <ul>
-                {user.experience.map((details, DetailsInndex) => {
-                  return (
-                    <>
-                      {details.Skills.map((Skill, SKillIndex) => {
-                        return <li key={SKillIndex}>{Skill}</li>;
-                      })}
-                    </>
-                  );
-                })}
+                {user.experience.map((details, DetailsInndex) => (
+                  <div key={DetailsInndex}>
+                    <li>{details.organizationName}</li>
+                    <li>{details.period}</li>
+                  </div>
+                ))}
               </ul>
+              <div>
+                <h2>SkillS : </h2>
+                <ul>
+                  {user.experience.map((details, DetailsInndex) => {
+                    return (
+                      <>
+                        {details.Skills.map((Skill, SKillIndex) => {
+                          return <li key={SKillIndex}>{Skill}</li>;
+                        })}
+                      </>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -77,3 +77,19 @@ if (isAgeValid <= 28) {
 //   default:
 //     console.log("Please provide a valid number between 1 to 7.");
 // }
+
+// 2. While loop
+// let total = 1;
+
+// while (total < 1) {
+//     console.log(total*5);
+//         total++; 
+// }
+
+// do ..while loop
+let isUserHaveAccount = 10;
+
+// do {
+//   console.log("Welcome to Guest User");
+//   isUserHaveAccount++
+// } while (isUserHaveAccount < 5);
