@@ -37,7 +37,7 @@ function LoginForm() {
           {/* Email Error */}
           <div className="my-1">
             {errors.email && (
-              <span className="text-red-600 font-medium capitalize">
+              <span className="text-red-600 font-medium">
                 {errors.email.message}
               </span>
             )}
@@ -80,9 +80,9 @@ function LoginForm() {
           </div>
           {/*Password Error*/}
           <div className="my-1">
-            <span className="text-red-600 font-medium capitalize">
+            <span className="text-red-500 font-medium capitalize">
               {errors.password && (
-                <span className="text-red-600 font-medium capitalize">
+                <span className="text-red-500 font-medium capitalize">
                   {errors.password.message}
                 </span>
               )}
