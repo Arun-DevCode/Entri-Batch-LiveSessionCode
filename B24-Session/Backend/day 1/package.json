@@ -1,0 +1,15 @@
+{
+  "name": "first-server-app",
+  "version": "1.0.0",
+  "description": "to learn about node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^3.1.11"
+  }
+}

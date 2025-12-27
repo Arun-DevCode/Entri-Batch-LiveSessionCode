@@ -1,0 +1,25 @@
+/* .color-h1 {
+  color: red;
+} */
+
+.dark {
+  background-color: black;
+  color: white;
+  padding: 12px;
+}
+
+.light {
+  background-color: white;
+  color: black;
+  padding: 12px;
+  text-align: justify;
+}
+
+.bg-h1 {
+  background-color: blue;
+}
+
+.white-color-h1 {
+  color: black;
+  padding: 5px;
+}

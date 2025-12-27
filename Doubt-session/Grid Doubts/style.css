@@ -1,0 +1,58 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  /* justify-content: center;
+  align-content: center; */
+  place-content: center;
+  height: 100svh;
+
+  /* justify-items: center;
+  align-items:center; */
+  place-items: center;
+}
+
+.box-1 {
+  width: 100px;
+  height: 100px;
+}
+
+.child-1 {
+  background-color: red;
+  padding: 12px;
+  width: 10px;
+}
+.child-2 {
+  background-color: blue;
+  padding: 12px;
+  width: 10px;
+}
+.box-2 {
+  background-color: black;
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+}
+.box-3 {
+  background-color: black;
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+}
+.box-4 {
+  background-color: black;
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+}
+.box-5 {
+  background-color: black;
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+}
+.box-6 {
+  background-color: black;
+  padding: 12px;
+  width: 100px;
+  height: 100px;
+}

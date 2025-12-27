@@ -1,9 +1,6 @@
 import { useParams } from "react-router";
 
 function UserPage() {
-  const { userId } = useParams();
-  console.log("Params Value :", userId);
-
   const users = [
     {
       id: 1,
@@ -237,7 +234,17 @@ function UserPage() {
     },
   ];
 
-  return <div>{users && <p>{users[userId].name}</p>}</div>;
+  // Declare
+  const params = useParams();
+  console.log(params.userId);
+  return (
+    <>
+      <h1>User Profile Page</h1>
+      <div>
+         <h3>{users[params.userId].name}</h3>
+      </div>
+    </>
+  );
 }
 
 export default UserPage;

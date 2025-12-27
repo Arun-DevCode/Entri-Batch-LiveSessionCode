@@ -5,9 +5,12 @@ import RegisterForm from "./components/RegisterForm.jsx";
 
 import { RouterProvider } from "react-router";
 import AppRouter from "./router/AppRouter.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={AppRouter} />
+    <main>
+      <RouterProvider router={AppRouter} />
+    </main>
   </StrictMode>
 );
