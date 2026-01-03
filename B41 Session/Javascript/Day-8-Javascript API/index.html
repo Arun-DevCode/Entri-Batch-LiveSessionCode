@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Speech Recognition Demo</title>
+  </head>
+  <body>
+    <button onclick="startListening()">Start Speaking</button>
+    <p id="output">Say something...</p>
+
+    <script>
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      if (!SpeechRecognition) {
+        alert("Speech Recognition not supported in this browser");
+      }
+
+      const recognition = new SpeechRecognition();
+      recognition.lang = "en-US";
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      let isListening = false;
+
+      function startListening() {
+        if (isListening) {
+          return;
+        }
+        recognition.start();
+        isListening = true;
+        console.log("Listening started...");
+      }
+
+      recognition.onresult = (event) => {
+        const text = event.results[0][0].transcript;
+        console.log("Recognized:", text);
+        document.getElementById("output").innerText = text;
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Error:", event.error);
+      };
+
+      recognition.onend = () => {
+        console.log("Listening stopped");
+        isListening = false;
+      };
+    </script>
+  </body>
+</html>

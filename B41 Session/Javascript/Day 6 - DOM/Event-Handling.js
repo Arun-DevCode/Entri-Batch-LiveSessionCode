@@ -16,20 +16,3 @@ function handleClick() {
 btn.addEventListener("click", handleClick);
 btn.removeEventListener("click", handleClick);
 
-
-// ==============================
-// EVENT DELEGATION
-// ==============================
-/*
-  1. Event bubbling
-  2. target vs currentTarget
-*/
-
-// Example
-const list = document.querySelector("ul");
-
-list.addEventListener("click", (e) => {
-  if (e.target.tagName === "LI") {
-    console.log(e.target.textContent);
-  }
-});

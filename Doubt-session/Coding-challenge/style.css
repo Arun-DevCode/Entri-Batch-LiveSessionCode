@@ -1,0 +1,30 @@
+.container {
+  position: relative;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.trigger-container button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Hide modal initially */
+.modal {
+  display: none;
+  padding: 20px;
+  background: lightgray;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* On hover: hide button */
+.container:hover .trigger-container {
+  display: none;
+}
+
+/* On hover: show modal */
+.container:hover .modal {
+  display: block;
+}

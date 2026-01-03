@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Speech Synthesis Demo</title>
+  </head>
+  <body>
+    <input type="text" id="textInput" placeholder="Type something" />
+    <button onclick="speakText()">Speak</button>
+
+    <script>
+      function speakText() {
+        const text = document.getElementById("textInput").value;
+        if (!text) {
+          alert("Please enter some text");
+          return;
+        }
+
+        // Create a new speech synthesis utterance
+        const utterance = new SpeechSynthesisUtterance(text);
+
+        // Optional settings
+        utterance.lang = "en-US"; // Language
+        utterance.pitch = 1; // Pitch: 0 to 2
+        utterance.rate = 1; // Speed: 0.1 to 10
+        utterance.volume = 1; // Volume: 0 to 1
+
+        // Speak the text
+        window.speechSynthesis.speak(utterance);
+      }
+    </script>
+  </body>
+</html>
