@@ -4,7 +4,7 @@ import Express from "express";
 const UserRouter = Express.Router();
 
 // Imports
-import UserCollection from "../models/userModel.js";
+// import UserCollection from "../models/userModel.js";
 
 // User Route Setup
 
@@ -23,7 +23,7 @@ UserRouter.post("/create-account", (req, res) => {
   //Response
   res.status(201).json({ message: "User account created!", accountInfo });
 });
-
+  
 // 5. Get-all-user
 UserRouter.get("/get-all-users", (req, res) => {
   // validation

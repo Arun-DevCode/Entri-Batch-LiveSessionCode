@@ -2,6 +2,7 @@ import Express from "express";
 
 //Route Import
 import UserRoute from "./src/routers/userRoute.js";
+import EmployeeRouter from "./src/routers/employee.js";
 
 // App setup
 const app = Express();
@@ -10,7 +11,7 @@ const app = Express();
 app.use(Express.json()); // body-parser
 
 //App Router
-app.use(UserRoute);
+app.use("/api/employee", EmployeeRouter);
 
 // Initial-Route
 app.use("/", (req, res) => {
