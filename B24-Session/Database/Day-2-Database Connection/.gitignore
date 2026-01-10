@@ -1,0 +1,5 @@
+# module folder
+node_modules
+
+# environment variable
+.env.local
