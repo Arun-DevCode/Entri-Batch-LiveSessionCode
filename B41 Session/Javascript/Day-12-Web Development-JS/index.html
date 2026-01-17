@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List - App</title>
+    <!--External Style File-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Title App-->
+    <h1
+      style="
+        text-align: center;
+        color: white;
+        margin-bottom: 6rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      "
+    >
+      Schedule Management <span style="color: blue">System</span>
+    </h1>
+    <!--Container-->
+    <section class="schedule-Container">
+      <!--Form-->
+      <div class="container">
+        <div class="content">
+          <h2>Create Schedules</h2>
+          <p>To enhance your productivity 10x.</p>
+        </div>
+        <form action="#">
+          <!--Title-->
+          <div>
+            <label for="title">Title</label>
+            <input type="text" name="title" placeholder="" id="title" />
+          </div>
+          <!--Description-->
+          <div>
+            <label for="description">description</label>
+            <input
+              type="text"
+              name="description"
+              placeholder=""
+              id="description"
+            />
+          </div>
+          <!--URL-->
+          <div>
+            <label for="url">URL</label>
+            <input type="url" name="url" placeholder="" id="url" />
+          </div>
+          <button type="submit">Add Todo</button>
+        </form>
+      </div>
+
+      <!--Schedule List-->
+      <div class="schedule-list-container">
+        <p style="color: white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo esse modi
+          ipsa dicta in inventore placeat eaque consequatur. Quia est natus ad
+          qui alias quo nam ut hic doloremque minima!
+        </p>
+      </div>
+    </section>
+
+    <!--Exteral Scrile file-->
+    <script src="./script.js"></script>
+  </body>
+</html>

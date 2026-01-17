@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 // Import
 import DBConnection from "./config/db.config.js";
-import UserModel from "./models/users.model.js";
+import ProductRouter from "./router/productRoute.js";
 
 //App Setup
 const app = Express();
@@ -12,18 +12,7 @@ const app = Express();
 app.use(Express.json()); // body parser
 
 // App Route
-// 1. create users account
-app.post("/create-account", (req, res) => {
-  const userData = req.body || {};
-
-  try {
-    const response = UserModel.create(userData);
-    // res
-    res.json(response);
-  } catch (error) {
-    console.log(error);
-  }
-});
+app.use("/api/product", ProductRouter);
 
 //env load
 dotenv.config({ path: "./src/.env" });

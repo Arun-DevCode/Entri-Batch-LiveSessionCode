@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GenAI File Upload Demo</title>
+  </head>
+  <body>
+    <h2>GenAI File Upload Demo</h2>
+
+    <input type="file" id="fileInput" />
+    <button id="uploadBtn">Upload File</button>
+
+    <p id="status"></p>
+    <pre id="result"></pre>
+
+    <script type="module">
+      import {
+        Files,
+        Models,
+      } from "https://cdn.jsdelivr.net/npm/@googleapis/js-genai@latest/dist/index.min.js";
+
+      const API_KEY = "AIzaSyA7j7JufDSF9VNXbT7RgeT6BoHsOpFB_vY";
+      // Create client instance
+      const ai = {
+        files: new Files({ apiKey: API_KEY }),
+        models: new Models({ apiKey: API_KEY }),
+      };
+
+      const fileInput = document.getElementById("fileInput");
+      const uploadBtn = document.getElementById("uploadBtn");
+      const status = document.getElementById("status");
+      const result = document.getElementById("result");
+
+      uploadBtn.addEventListener("click", async () => {
+        if (!fileInput.files.length) {
+          alert("Please select a file first!");
+          return;
+        }
+
+        const file = fileInput.files[0];
+        status.textContent = `Uploading ${file.name}...`;
+
+        try {
+          // Use ai.files instead of undefined filesClient
+          const uploadedFile = await ai.files.upload({
+            file: file,
+            purpose: "fine-tune", // or "answers"
+          });
+
+          status.textContent = `Upload successful!`;
+          result.textContent = JSON.stringify(uploadedFile, null, 2);
+        } catch (error) {
+          status.textContent = "Upload failed!";
+          console.error(error);
+        }
+      });
+    </script>
+  </body>
+</html>
