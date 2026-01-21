@@ -1,0 +1,15 @@
+let count = 0;
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.log("working..", count++);
+console.logs("Not working..");
