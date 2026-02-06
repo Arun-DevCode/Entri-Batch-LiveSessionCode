@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --font-size: 36px;
+}
+
+@theme {
+  --text-Primary: var(--font-size);
+}
+
+@layer base {
+  button {
+    background-color: red;
+    color: white;
+  }
+  h1 {
+    color: gray;
+    font-size: 24px;
+  }
+}
+
+@layer components {
+  .User-Input {
+  }
+}
+
+@layer utilities {
+  .input-border {
+    @apply border border-gray-200;
+  }
+  .text-10xl {
+    font-size: 8.0625rem;
+  }
+}

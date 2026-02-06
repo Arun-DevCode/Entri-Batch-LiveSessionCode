@@ -2,27 +2,30 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 
-//Import
+// Import
 import DBConnection from "./config/db.config.js";
 
-// App Router
+// Routers
 import UserRouter from "./router/userRoute.js";
 import PostRouter from "./router/postRoute.js";
 
-// App Config
+// Config
+dotenv.config();
 const app = express();
-dotenv.config(); // env loader
 
-// App middleware
-app.use(express.json()); // request body parser
+// Middleware
+app.use(express.json()); // body parser : JSON -> Object
 app.use(cors());
+
+// Routes
 app.use("/api/user", UserRouter);
 app.use("/api/post", PostRouter);
 
-//DB Connection
+// Database
 DBConnection();
-// Server listen
-const PORT = 4000;
+
+// Server
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`server running on http:/localhost:${PORT}/`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

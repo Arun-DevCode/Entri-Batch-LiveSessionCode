@@ -1,20 +1,14 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { matchedData } from "express-validator";
 
 // User Controller
 import UserModel from "../model/user.js";
 
 // 1. To create user account
 export const handleToCreateAccount = async (req, res) => {
-  const { name, email, password, postTitle } = req.body;
   try {
-    // Field validation
-    if (!name || !email || !password) {
-      return res.json({
-        error: false,
-        message: "Please fill all required fields.",
-      });
-    }
+    const { name, email, password } = matchedData(req); // success result
 
     // Hashing
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -33,7 +27,6 @@ export const handleToCreateAccount = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      postTitle,
       createAt: now,
     };
     const newUser = await UserModel.insertOne(payload);
@@ -48,6 +41,7 @@ export const handleToCreateAccount = async (req, res) => {
     res.json({ error: false, message: "User Account Created..." });
   } catch (error) {
     console.log(error);
+    return;
   }
 };
 
@@ -84,5 +78,37 @@ export const handleUserLogin = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getUserProfile = async (req, res) => {
+  const email = req.user;
+  console.log(email);
+  try {
+    // Get User Details
+    if (!email) {
+      return res.json({
+        error: true,
+        message: "Unauthorized user. Please go to login",
+      });
+    }
+    // User Validation
+    const user = await UserModel.findOne({ email }); // null
+    console.log(user);
+    const userDTO = { name: user.name, email: user.email }; // DTO : USER
+    if (!user) {
+      throw new Error({
+        error: true,
+        message: "No User Found. Please go to register.",
+      });
+    }
+
+    // Respond to User Req.
+    res.json({ error: false, message: "fetch user profile", user: userDTO });
+  } catch (error) {
+    if (error) {
+      res.json(error);
+      return;
+    }
   }
 };

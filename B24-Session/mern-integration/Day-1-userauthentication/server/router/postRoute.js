@@ -1,12 +1,17 @@
 import express from "express";
 
-const PostRouter = express.Router();
-
-// Imports
 import getAllPost from "../controller/post.controller.js";
 import authenticate from "../middleware/auth.js";
+import authorization from "../utils/permission.validator.js";
 
-// Root Router
-PostRouter.get("/get-all-post", authenticate, getAllPost);
+const PostRouter = express.Router();
+
+// Routes
+PostRouter.get(
+  "/get-all-post",
+  authenticate,
+  authorization("ADMIN", "read:admin"),
+  getAllPost,
+);
 
 export default PostRouter;

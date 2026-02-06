@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+// CSS Variable
+:root {
+  --font-size: 12px;
+}
+
+@theme {
+  --font-ButtonSize: var(--font-size);
+}
+
+@layer components {
+  .card-UI {
+    @apply bg-blue-500 text-white rounded font-medium text-center px-5 py-2;
+  }
+}

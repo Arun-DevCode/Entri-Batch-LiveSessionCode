@@ -30,7 +30,8 @@ async function authenticate(req, res, next) {
       });
     }
 
-    // Forward request to responder
+    // Forward request to nextHandler
+    req.user = isValid.email;
     next();
   } catch (error) {
     console.log(error);

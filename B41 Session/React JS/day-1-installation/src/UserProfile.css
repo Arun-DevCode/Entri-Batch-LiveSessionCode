@@ -1,0 +1,16 @@
+.title {
+  color: red;
+  font-size: 42px;
+}
+
+.desc {
+  color: gray;
+  font-size: 21px;
+}
+
+.button {
+  background-color: blue;
+  padding-inline: 12px;
+  padding-block: 5px;
+  color: white;
+}

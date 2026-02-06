@@ -1,5 +1,7 @@
-import express from "express";
+import express, { response } from "express";
 import dotenv from "dotenv";
+import morgan from "morgan"; // req - res monitor
+import rateLimit from "express-rate-limiter";
 
 dotenv.config();
 
@@ -10,6 +12,17 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+app.use(morgan("dev"));
+
+  const limiter = rateLimit({
+    windowMs: 3 * 60 * 1000, // 3 minutes
+    max: 3, // limit each IP to 100 requests
+    message: "Too many requests, please try again later.",
+    standardHeaders: true,
+    legacyHeaders: true,
+  });
+
+  app.use(limiter);
 
 // Routes
 app.use("/api/user", UserRouter);

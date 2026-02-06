@@ -1,7 +1,7 @@
-import UserStorage from "../model/user.model.js";
+import UserModel from "../model/user.model.js";
 
 // Create Account
-export const createUserAccount = (req, res) => {
+export const createUserAccount = async (req, res) => {
   const user = req.body;
   try {
     // Data Validation
@@ -13,16 +13,20 @@ export const createUserAccount = (req, res) => {
     }
 
     //Check user exists & Store
-    UserStorage.push(user);
+    const isUserFound = await UserModel.findOne({ email: user.email });
+    if (isUserFound) {
+      throw new Error("User already exits. Please go to login.");
+    }
 
+    const newUser = await UserModel.insertOne(user);
+    if (!newUser) {
+      throw new Error("Failed to create user account. Please try again later.");
+    }
     // Respond to client req
     res.json({
       error: false,
       message: "User Created Success..",
-      user: UserStorage.map((user) => ({
-        email: user.email,
-        role: user.role,
-      })),
+      user: newUser,
     });
   } catch (error) {
     console.log(error);
@@ -38,7 +42,7 @@ export const createUserAccount = (req, res) => {
 };
 
 // User Login into account
-export const UserLogin = (req, res) => {
+export const UserLogin = async (req, res) => {
   const user = req.body;
   try {
     // Data Validation
@@ -50,9 +54,7 @@ export const UserLogin = (req, res) => {
     }
 
     //Check user exists
-    const isUserFound = UserStorage.find(
-      (regUser) => regUser.email === user.email,
-    );
+    const isUserFound = await UserModel.findOne({ email: user.email });
     if (!isUserFound) {
       throw new Error(`No User Found ${user.email}`);
     }

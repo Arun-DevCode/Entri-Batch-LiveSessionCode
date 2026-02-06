@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 // Import
 import DBConnection from "./config/db.config.js";
 import ProductRouter from "./router/productRoute.js";
+import OrderRouter from "./router/orderRoute.js";
 
 //App Setup
 const app = Express();
@@ -13,6 +14,7 @@ app.use(Express.json()); // body parser
 
 // App Route
 app.use("/api/product", ProductRouter);
+app.use("/api/order", OrderRouter);
 
 //env load
 dotenv.config({ path: "./src/.env" });
