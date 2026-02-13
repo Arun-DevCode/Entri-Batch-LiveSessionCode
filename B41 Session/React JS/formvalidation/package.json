@@ -1,25 +1,20 @@
 {
-  "name": "reactjs",
+  "name": "formvalidation",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "json:Server": "json-server --watch ./src/Data/products.json --port 3000"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.9.0",
-    "@tailwindcss/vite": "^4.1.12",
-    "axios": "^1.11.0",
-    "json-server": "^1.0.0-beta.5",
+    "@tailwindcss/vite": "^4.1.18",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-redux": "^9.2.0",
-    "react-router": "^7.8.2",
-    "tailwindcss": "^4.1.12"
+    "react-hook-form": "^7.71.1",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

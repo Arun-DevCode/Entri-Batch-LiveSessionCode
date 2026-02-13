@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Wireless Mouse",
+      "category": "Electronics",
+      "price": 29.99,
+      "inStock": true
+    },
+    {
+      "id": "2",
+      "name": "Mechanical Keyboard",
+      "category": "Electronics",
+      "price": 89.5,
+      "inStock": true
+    },
+    {
+      "id": "3",
+      "name": "Coffee Mug",
+      "category": "Home",
+      "price": 12.0,
+      "inStock": true
+    },
+    {
+      "id": "4",
+      "name": "Leather Journal",
+      "category": "Stationery",
+      "price": 24.0,
+      "inStock": false
+    },
+    {
+      "id": "5",
+      "name": "Noise Cancelling Headphones",
+      "category": "Electronics",
+      "price": 199.99,
+      "inStock": true
+    },
+    {
+      "id": "6",
+      "name": "Desk Lamp",
+      "category": "Home",
+      "price": 45.0,
+      "inStock": true
+    },
+    {
+      "id": "7",
+      "name": "Yoga Mat",
+      "category": "Fitness",
+      "price": 35.0,
+      "inStock": true
+    },
+    {
+      "id": "8",
+      "name": "Water Bottle",
+      "category": "Fitness",
+      "price": 18.0,
+      "inStock": false
+    },
+    {
+      "id": "9",
+      "name": "USB-C Hub",
+      "category": "Electronics",
+      "price": 49.99,
+      "inStock": true
+    },
+    {
+      "id": "10",
+      "name": "Fountain Pen",
+      "category": "Stationery",
+      "price": 65.0,
+      "inStock": true
+    }
+  ]
+}
