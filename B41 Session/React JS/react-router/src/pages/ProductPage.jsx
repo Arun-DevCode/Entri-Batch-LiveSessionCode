@@ -1,9 +1,9 @@
-import { Link } from "react-router";
+import { Link, Outlet } from "react-router";
 
-function HomePage() {
+function ProductPage() {
   return (
     <div>
-      <h1>Welcome to Home Page</h1>
+      <h1>Welcome to Product Page</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
         possimus placeat? Officia inventore esse ea laboriosam dolores, quas
@@ -11,9 +11,11 @@ function HomePage() {
         Consectetur, quod.
       </p>
 
-      <Link to={"/product"}>Go to Product Page</Link>
+      <h1>Child Route : Mobile</h1>
+      <Outlet />
+      <Link to={"/"}>Back to home page</Link>
     </div>
   );
 }
 
-export default HomePage;
+export default ProductPage;

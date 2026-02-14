@@ -1,9 +1,9 @@
 import { Link } from "react-router";
 
-function HomePage() {
+function AdminPage() {
   return (
     <div>
-      <h1>Welcome to Home Page</h1>
+      <h1>Welcome to Admin Page</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
         possimus placeat? Officia inventore esse ea laboriosam dolores, quas
@@ -11,9 +11,9 @@ function HomePage() {
         Consectetur, quod.
       </p>
 
-      <Link to={"/product"}>Go to Product Page</Link>
+      <Link to={"/"}>Back to Product Page</Link>
     </div>
   );
 }
 
-export default HomePage;
+export default AdminPage;
