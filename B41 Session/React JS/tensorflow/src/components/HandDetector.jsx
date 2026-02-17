@@ -4,11 +4,6 @@ import "@tensorflow/tfjs-backend-webgl";
 import * as handPoseDetection from "@tensorflow-models/hand-pose-detection";
 import { Webcam } from "./Webcam";
 
-/**
- * HandDetector Component
- * Initializes TensorFlow.js, loads the hand pose detection model,
- * and continuously detects hand landmarks from webcam feed
- */
 export function HandDetector() {
   const videoRef = useRef(null);
   const detectorRef = useRef(null);

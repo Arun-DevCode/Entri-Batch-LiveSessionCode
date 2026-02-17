@@ -1,10 +1,5 @@
 import { useEffect, useRef, forwardRef } from "react";
 
-/**
- * Webcam Component
- * Provides access to the user's webcam and renders video stream
- * Accepts a ref from parent to allow direct access to video element
- */
 export const Webcam = forwardRef((props, ref) => {
   useEffect(() => {
     // Request access to webcam
@@ -28,7 +23,6 @@ export const Webcam = forwardRef((props, ref) => {
 
     initWebcam();
 
-    // Cleanup: Stop all tracks when component unmounts
     return () => {
       if (ref && ref.current && ref.current.srcObject) {
         ref.current.srcObject.getTracks().forEach((track) => {
