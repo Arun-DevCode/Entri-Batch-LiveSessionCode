@@ -8,6 +8,9 @@ const UserSchema = mongoose.Schema({
 });
 
 // User Collection
-const UserModal = mongoose.model("users", UserSchema);
+const UserModel = mongoose.model("users", UserSchema);
 
-export default UserModal;
+//Indexing - User (Single Field Indexing)
+UserSchema.index({ email: 1 });
+
+export default UserModel;

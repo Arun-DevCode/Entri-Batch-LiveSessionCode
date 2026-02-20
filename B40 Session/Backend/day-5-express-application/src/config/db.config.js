@@ -3,7 +3,7 @@ import mongoose from "mongoose"; // ODM : Object Data Modeling
 async function DBConnection() {
   try {
     const connection = await mongoose.connect(
-      "mongodb://localhost:27017/LocalDB",
+      "mongodb+srv://arun:pgWSmnsLyNALu2Ab@cluster0.ynk007h.mongodb.net/LocalDB?appName=Cluster0",
     );
 
     return connection;

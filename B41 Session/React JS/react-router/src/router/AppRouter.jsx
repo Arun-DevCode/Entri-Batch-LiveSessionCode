@@ -19,6 +19,8 @@ import {
 import ViewUserDetails from "../pages/ViewUserDetails";
 import UserRegister from "../pages/UserRegister";
 import FeedbackForm from "../pages/FeedbackForm";
+import FindPhotoPage from "../pages/FindPhotos";
+import findPhoto from "../Loader/Product";
 
 function RouteProtection({ children }) {
   const isUserLoggedin = true;
@@ -83,6 +85,11 @@ const AppRouter = createBrowserRouter([
   {
     path: "/feedback",
     element: <FeedbackForm />,
+  },
+  {
+    path: "/find-photo",
+    Component: FindPhotoPage,
+    loader: findPhoto,
   },
   {
     path: "*",

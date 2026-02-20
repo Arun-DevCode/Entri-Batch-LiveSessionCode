@@ -10,25 +10,38 @@
         box-sizing: border-box;
         margin: 0;
       }
-      body {
-        height: 100dvh;
+      .container {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        border: 1px solid red;
+        /* flex-wrap: wrap; */
+        /* align-items: stretch; */
+        /* align-content: center; */
+        justify-content: space-evenly;
+        height: 600px;
+        /* gap: 12px 10px; */
+        /* row-gap: 12px;
+        column-gap: 12px; */
+        flex-wrap: wrap;
+        /* align-items: center; */
       }
-      div {
+      .box-1,
+      .box-2,
+      .box-3 {
         background-color: black;
-        width: 100px;
-        height: 100px;
         color: white;
         padding: 8px;
+        width: 100px;
+        height: 100px;
       }
     </style>
   </head>
   <!--Flex Box Container-->
   <body>
-    <div>container 1</div>
-    <div>container 2</div>
-    <div>container 3</div>
+    <!--Parent ELement / Flex Container-->
+    <div class="container">
+      <div class="box-1">Container-1</div>
+      <div class="box-2">Container-2</div>
+    </div>
   </body>
 </html>
